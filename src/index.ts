@@ -64,9 +64,9 @@ async function main() {
 
   // 1. PDFファイルの読み込みとインデックス作成
   const pdfFiles = [
-    "documents/agent.pdf",
-    "documents/prompt-engineering.pdf",
-    "documents/adversarial-attack.pdf",
+    "documents/# LLMエージェント.pdf",
+    "documents/# プロンプトエンジニアリング.pdf",
+    "documents/# LLMに対する敵対的攻撃.pdf",
   ];
 
   console.log("ドキュメントを読み込んでいます...");
