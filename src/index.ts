@@ -2,27 +2,16 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { ChatOpenAI } from "@langchain/openai";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { z } from "zod";
 import { Client, type Dataset } from "langsmith";
 import { PromptTemplate } from "@langchain/core/prompts";
-import { RunnableSequence } from "@langchain/core/runnables";
-import { StringOutputParser } from "@langchain/core/output_parsers";
 import { formatDocumentsAsString } from "langchain/util/document";
 import { Document } from "langchain/document";
 import * as dotenv from "dotenv";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import * as fs from "fs";
-import * as path from "path";
 
 // 環境変数の読み込み
 dotenv.config();
-
-// 環境変数の設定
-process.env.LANGSMITH_TRACING = "true";
-// 以下の環境変数は.envファイルで設定してください
-// process.env.LANGSMITH_API_KEY = "YOUR LANGSMITH API KEY";
-// process.env.OPENAI_API_KEY = "YOUR OPENAI API KEY";
-// process.env.SEARCHAPI_API_KEY = "YOUR SEARCHAPI API KEY"; // SearchAPIのAPIキーを追加
 
 // 評価結果の型定義
 interface EvaluationResult {
